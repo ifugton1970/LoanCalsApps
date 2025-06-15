@@ -1,5 +1,6 @@
 {
   "name": "Loan Amortization Calculator",
   "description": "A web application to calculate and display a loan amortization schedule, with an option to export the results to Excel. Allows users to input loan amount, interest rate, term, and other parameters to generate a detailed payment breakdown.",
-  "requestFramePermissions": []
+  "requestFramePermissions": [],
+  "prompt": ""
 }
