@@ -8,9 +8,12 @@
     "xlsx": "^0.18.5",
     "date-fns": "^3.6.0"
   },
+  "devDependencies": {
+    "esbuild": "^0.20.0"
+  },
   "scripts": {
-    "dev": "echo \"Run index.html in a local server for development.\" && exit 0",
-    "build": "echo \"No build step needed, Vercel will serve static files from the root.\" && exit 0"
+    "dev": "echo \"Run index.html in a local server with on-the-fly TSX transpilation for development.\" && exit 0",
+    "build": "esbuild ./index.tsx --bundle --outfile=./index.js --format=esm --jsx=automatic --loader:.tsx=tsx --external:react --external:react-dom/client --external:xlsx --external:date-fns"
   },
   "engines": {
     "node": ">=18.0.0"
