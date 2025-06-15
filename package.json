@@ -6,7 +6,9 @@
     "react": "19.0.0-rc-f994737d14-20240522",
     "react-dom": "19.0.0-rc-f994737d14-20240522",
     "xlsx": "^0.18.5",
-    "date-fns": "^3.6.0"
+    "date-fns": "^3.6.0",
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.8.2"
   },
   "devDependencies": {
     "esbuild": "^0.20.0",
@@ -15,7 +17,7 @@
   },
   "scripts": {
     "dev": "echo \"Run index.html in a local server with on-the-fly TSX transpilation for development.\" && exit 0",
-    "build": "rimraf ./dist && esbuild ./index.tsx --bundle --outfile=./dist/index.js --format=esm --jsx=automatic --loader:.tsx=tsx --external:react --external:react-dom/client --external:xlsx --external:date-fns && cpx \"./index.html\" ./dist && cpx \"./metadata.json\" ./dist"
+    "build": "rimraf ./dist && esbuild ./index.tsx --bundle --outfile=./dist/index.js --format=esm --jsx=automatic --loader:.tsx=tsx --external:react --external:react-dom/client --external:xlsx --external:date-fns --external:jspdf --external:jspdf-autotable && cpx \"./index.html\" ./dist && cpx \"./metadata.json\" ./dist"
   },
   "engines": {
     "node": ">=18.0.0"
