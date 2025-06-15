@@ -9,11 +9,13 @@
     "date-fns": "^3.6.0"
   },
   "devDependencies": {
-    "esbuild": "^0.20.0"
+    "esbuild": "^0.20.0",
+    "rimraf": "^5.0.0",
+    "cpx": "^1.5.0"
   },
   "scripts": {
     "dev": "echo \"Run index.html in a local server with on-the-fly TSX transpilation for development.\" && exit 0",
-    "build": "esbuild ./index.tsx --bundle --outfile=./index.js --format=esm --jsx=automatic --loader:.tsx=tsx --external:react --external:react-dom/client --external:xlsx --external:date-fns"
+    "build": "rimraf ./dist && esbuild ./index.tsx --bundle --outfile=./dist/index.js --format=esm --jsx=automatic --loader:.tsx=tsx --external:react --external:react-dom/client --external:xlsx --external:date-fns && cpx \"./index.html\" ./dist && cpx \"./metadata.json\" ./dist"
   },
   "engines": {
     "node": ">=18.0.0"
